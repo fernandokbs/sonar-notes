@@ -1,5 +1,5 @@
 ```bash
-docker create network ci-network
+docker network create ci-network
 ```
 
 ```bash

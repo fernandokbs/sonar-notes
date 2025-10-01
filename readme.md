@@ -7,7 +7,7 @@ version: '3.7'
 
 services:
   sonarqube:
-    image: sonarqube
+    image: sonarqube # arm64v8/sonarqube
     ports:
       - 9000:9000
     networks:

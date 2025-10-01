@@ -37,3 +37,10 @@ docker run \
     -Dsonar.projectKey="mi-proyecto-key" \
     -Dsonar.sources="/usr/src"
 ```
+
+```bash
+http://localhost:9000/quality_gates/
+```
+
+
+

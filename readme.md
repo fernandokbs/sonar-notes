@@ -3,8 +3,6 @@ docker network create ci-network
 ```
 
 ```bash
-version: '3.7'
-
 services:
   sonarqube:
     image: sonarqube # arm64v8/sonarqube
@@ -12,6 +10,9 @@ services:
       - 9000:9000
     networks:
       - ci-network
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+    restart: always
 
 volumes:
   sonarqube_data:
@@ -21,7 +22,6 @@ networks:
     external: true
 ```
 
-
 ```
 http://localhost:9000/account/security
 ```
@@ -30,11 +30,11 @@ http://localhost:9000/account/security
 docker run \
     --rm \
     -e SONAR_HOST_URL="http://sonarqube:9000/"  \
-    -e SONAR_TOKEN="squ_eeccf19393aae95d26e8efb9056fab0603144113" \
+    -e SONAR_TOKEN="squ_7cbc6f4c478bf4e9bb52b497e45fd87cccc77" \
     --network=ci-network \
-    -v "/home/fernando/apps/notificacion-adjudicaciones:/usr/src" \
+    -v "/home/fernando/apps/milugar.devlocal":/usr/src \
     sonarsource/sonar-scanner-cli \
-    -Dsonar.projectKey="mi-proyecto-key" \
+    -Dsonar.projectKey="milugar.devlocal" \
     -Dsonar.sources="/usr/src"
 ```
 

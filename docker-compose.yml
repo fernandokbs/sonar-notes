@@ -1,0 +1,17 @@
+services:
+  sonarqube:
+    image: sonarqube # arm64v8/sonarqube
+    ports:
+      - 9000:9000
+    networks:
+      - ci-network
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+    restart: always
+
+volumes:
+  sonarqube_data:
+
+networks:
+  ci-network:
+    external: true

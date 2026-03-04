@@ -33,7 +33,7 @@ docker run \
     -e SONAR_TOKEN="squ_7cbc6f4c478bf4e9bb52b497e45fd87cccc77" \
     --network=ci-network \
     -v "/home/fernando/apps/milugar.devlocal":/usr/src \
-    sonarsource/sonar-scanner-cli \
+    sonarsource/sonar-scanner-cli:12.0 \
     -Dsonar.projectKey="milugar.devlocal" \
     -Dsonar.sources="/usr/src"
 ```

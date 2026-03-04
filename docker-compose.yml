@@ -1,6 +1,6 @@
 services:
   sonarqube:
-    image: sonarqube # arm64v8/sonarqube # sonarqube:26.2.0.119303-community
+    image: sonarqube:26.2.0.119303-community # arm64v8/sonarqube # sonarqube:26.2.0.119303-community
     ports:
       - 9000:9000
     networks:
